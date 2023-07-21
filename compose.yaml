@@ -1,0 +1,61 @@
+services:
+  db:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - private
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  api:
+    build:
+      args:
+      - NODE_ENV=development
+      context: api
+      target: development
+    command: yarn start
+    environment:
+      - NODE_ENV=development
+      - PG_DBNAME=postgres
+      - PG_HOST=db
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+    ports:
+      - 3000:3000
+      - 9229:9229
+      - 9230:9230
+    volumes:
+      - ./api/src:/api/src:ro
+      - ./api/package.json:/api/package.json
+      - ./api/yarn.lock:/api/yarn.lock
+      # - back-notused:/opt/app/node_modules
+    networks:
+      - public
+      - private
+    depends_on:
+      - db
+  
+  webapp:
+    build:
+      context: webapp
+      target: development
+    ports:
+      - 3001:3001
+    volumes:
+      - ./webapp/src:/webapp/src
+      - /webapp/node_modules
+    networks:
+      - public
+    depends_on:
+      - api
+
+networks:
+  public:
+  private:
+volumes:
+  # back-notused:
+  db-data:
