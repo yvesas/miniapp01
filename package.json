@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "workspaces": ["api", "webapp"],
+  "scripts": {
+		"dev": "turbo run dev --parallel --no-daemon",
+		"start": "turbo run start --parallel --no-daemon",		
+		"build": "turbo run build --no-daemon"
+	},
+	"devDependencies": {
+		"turbo": "^1.5.6"
+	}
+}
