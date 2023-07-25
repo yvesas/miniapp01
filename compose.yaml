@@ -11,6 +11,13 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
+# Adminer is a simple and lightweight database management system written in PHP.
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 7070:7070
+
   api:
     build:
       args:
