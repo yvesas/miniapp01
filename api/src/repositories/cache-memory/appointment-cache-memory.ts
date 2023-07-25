@@ -1,8 +1,10 @@
 import { areIntervalsOverlapping } from "date-fns";
 import { Appointment } from "../../entities/appointment/appointment";
-import { AppointmentRepository } from "../appointment-repository";
+import { AppointmentsRepository } from "../appointments-repository";
+import { Injectable } from "@nestjs/common";
 
-export class AppointmenteCacheMemory implements AppointmentRepository {
+@Injectable()
+export class AppointmentsCacheMemory implements AppointmentsRepository {
   public items: Appointment[] = [] 
 
   async create(appointment: Appointment): Promise<void> {
