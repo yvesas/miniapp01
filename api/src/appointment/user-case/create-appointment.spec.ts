@@ -1,7 +1,7 @@
-import { AppointmentsRepository } from './../../repositories/appointments-repository';
-import { Appointment } from "../../entities/appointment/appointment"
+import { AppointmentsRepository } from '../repositories/appointments-repository';
+import { Appointment } from "../entities/appointment"
 import { CreateAppointment } from "./create-appointment"
-import { AppointmentsCacheMemory } from '../../repositories/cache-memory/appointment-cache-memory';
+import { AppointmentsCacheMemory } from '../repositories/cache-memory/appointment-cache-memory';
 import { getFutureDate } from '../../shared/handler-date/handler-date';
 
 describe('Create appointment', () => {

@@ -1,5 +1,5 @@
 import { areIntervalsOverlapping } from "date-fns";
-import { Appointment } from "../../entities/appointment/appointment";
+import { Appointment } from "../../appointment/entities/appointment/appointment";
 import { AppointmentsRepository } from "../appointments-repository";
 import { Injectable } from "@nestjs/common";
 
