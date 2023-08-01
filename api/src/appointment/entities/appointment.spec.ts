@@ -1,4 +1,4 @@
-import { getFutureDate } from '../../shared/handler-date/handler-date';
+import { getFutureDate } from '../utils/handler-date/handler-date';
 import { Appointment  } from './appointment';
 
 test('Create an Appointment', () => {

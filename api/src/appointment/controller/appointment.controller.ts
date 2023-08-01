@@ -1,5 +1,5 @@
-import { Controller } from '@nestjs/common';
-import { AppointmentService } from './appointment.service';
+import { Controller, Post, Get } from '@nestjs/common';
+import { AppointmentService } from '../appointment.service';
 
 @Controller()
 export class AppointmentController {
@@ -9,5 +9,11 @@ export class AppointmentController {
   getHello(): string {
     return this.appointmentService.getHello();
   }
+
+  // @Post()
+  // create(): string {
+  //   return this.appointmentService.getHello();
+  // }
+
 
 }

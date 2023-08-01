@@ -1,4 +1,3 @@
-import { error } from "console"
 
 export interface AppointmentProps {
   customerId: string

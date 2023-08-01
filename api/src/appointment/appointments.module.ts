@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AppointmentService } from './controller/appointment.service';
+import { AppointmentService } from './appointment.service';
 // import { UsersResolver } from './users.resolver';
 
 @Module({

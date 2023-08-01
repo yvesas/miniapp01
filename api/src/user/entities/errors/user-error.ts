@@ -1,0 +1,3 @@
+interface UserError {
+  message: string
+}

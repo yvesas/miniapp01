@@ -1,5 +1,5 @@
 import { AppointmentsRepository } from "src/appointment/repositories/appointments-repository"
-import { Appointment } from "../entities/appointment/appointment"
+import { Appointment } from "../entities/appointment"
 
 interface CreateAppointmentRequest {
   customerId: string

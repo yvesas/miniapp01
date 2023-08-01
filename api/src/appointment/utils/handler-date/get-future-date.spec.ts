@@ -1,4 +1,4 @@
-import { getFutureDate } from '../handler-date/handler-date'
+import { getFutureDate } from './handler-date'
 
 test('increases date with one year', ()=>{
   const year = new Date().getFullYear()
