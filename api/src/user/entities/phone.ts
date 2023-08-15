@@ -8,7 +8,7 @@ export class Phone {
 
   private constructor (phone: string, countryCode: string) {
     this.phone = phone
-    // this.cc = countryCode
+    this.cc = countryCode
     Object.freeze(this)
   }
 

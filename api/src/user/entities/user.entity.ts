@@ -27,7 +27,7 @@ export class User {
     const firstNameOrError: Either<InvalidNameError, Name> = Name.create(userData.firstName);
     const lastNameOrError: Either<InvalidNameError, Name> = Name.create(userData.lastName);  
     const emailOrError: Either<InvalidEmailError, Email> = Email.create(userData.email);
-    const phoneOrError = Either<InvalidPhoneError, Phone> = Phone.create(userData.phone, userData.countryCode);
+    const phoneOrError: Either<InvalidPhoneError, Phone> = Phone.create(userData.phone, userData.countryCode);
     const _password = userData.password
 
     if (firstNameOrError.isLeft()) {
