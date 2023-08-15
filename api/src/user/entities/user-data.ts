@@ -3,5 +3,6 @@ export interface UserData {
   firstName: string
   lastName: string
   phone: string
+  countryCode?: string
   password: string
 }

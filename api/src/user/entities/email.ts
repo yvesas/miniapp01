@@ -30,6 +30,8 @@ export class Email {
 
   static validate (email: string): boolean {
     var tester = /^[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/
+    var tester2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
     if (!email) {
       return false
     }
@@ -37,6 +39,9 @@ export class Email {
       return false
     }
     if (!tester.test(email)) {
+      return false
+    }
+    if (!tester2.test(email)) {
       return false
     }
     var [account, domain] = email.split('@')
